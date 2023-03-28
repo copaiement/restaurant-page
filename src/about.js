@@ -13,6 +13,7 @@ function about() {
     'Lead by Chef Boy R. Dee, we specialize in American Contemporary cuisine.',
     'Our current menu is called Spring Fling and contains a range of dishes created from locally-sourced ingredients',
     'Call us today to make a reservation!',
+    '716-043-0987',
   ];
 
   for (let i = 0; i < aboutText.length; i += 1) {

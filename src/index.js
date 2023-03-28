@@ -20,18 +20,22 @@ const buildPage = (() => {
     const aboutBtn = btnsContainer.appendChild(document.createElement('div'));
     const menuBtn = btnsContainer.appendChild(document.createElement('div'));
     const contactBtn = btnsContainer.appendChild(document.createElement('div'));
-    header.setAttribute('class', 'header');
-    logo.setAttribute('id', 'logo');
+    header.className = 'header';
+    logo.id = 'logo';
     logo.textContent = 'The Blue Leaf';
-    subtext.setAttribute('id', 'subtext');
+    subtext.id = 'subtext';
     subtext.textContent = 'American Contemporary Dining';
-    btnsContainer.setAttribute('class', 'btns-container');
-    aboutBtn.setAttribute('class', 'menu-button');
+    btnsContainer.className = 'btns-container';
+    aboutBtn.className = 'menu-button';
+    aboutBtn.classList.add('selected');
     aboutBtn.textContent = 'About';
-    menuBtn.setAttribute('class', 'menu-button');
+    aboutBtn.id = 'About';
+    menuBtn.className = 'menu-button';
     menuBtn.textContent = 'Menu';
-    contactBtn.setAttribute('class', 'menu-button');
+    menuBtn.id = 'Menu';
+    contactBtn.className = 'menu-button';
     contactBtn.textContent = 'Contact';
+    contactBtn.id = 'Contact';
   }
 
   function buildMain() {
@@ -40,7 +44,7 @@ const buildPage = (() => {
   }
 
   function clearMain() {
-    const main = document.querySelector('.main');
+    const main = document.querySelector('.main-container');
     while (main.firstChild) {
       main.removeChild(main.firstChild);
     }
@@ -63,10 +67,19 @@ const buildPage = (() => {
   function setPage(event) {
     // clear main div
     clearMain();
-    const button = event.target.innerHTML;
+    const inputButton = event.target.innerHTML;
     // clear button styling
-
+    const buttons = document.querySelectorAll('.menu-button');
+    buttons.forEach(button => button.classList.remove('selected'));
     // set button styling
+    document.querySelector(`#${inputButton}`).classList.add('selected');
+    if (inputButton === 'About') {
+      about();
+    } else if (inputButton === 'Menu') {
+      menu();
+    } else {
+      contact();
+    }
   }
 
   function initialize() {
