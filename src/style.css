@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root {
+  font-family: 'Staatliches', cursive;
+  font-size: 24px;
+  /* background colors */
+  --body-bg: rgb(240, 212, 200);
+  --contrast-bg: rgb(21, 21, 36);
+  --contrast-color: ;
+  
+  /* text colors */
+  --main-text-color: black;
+  --alt-text-color: ;
+  --contrast-text-color: rgb(182, 182, 182);
+}
+
+body {
+  /* basic styling */
+  box-sizing: border-box;
+  margin: 0;
+  height: 100vh;
+}
+
+#content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: var(--contrast-bg);
+  color: var(--contrast-text-color);
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  font-size: 2rem;
+}
+
+#subtext {
+  font-size: .75rem;
+}
+
+.btns-container {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  scale: 1.1;
+}
+
+.menu-button-selected {
+  text-decoration: underline;
+}
+
+.main-container {
+  background-color: var(--body-bg);
+  color: var(--main-text-color);
+  height: 100%;
+}
+
+.footer {
+  background-color: var(--contrast-bg);
+  color: var(--contrast-text-color);
+  padding: .5rem;
+  font-size: .5rem;
+  text-align: center;
+}

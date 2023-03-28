@@ -2,6 +2,9 @@
 import about from './about';
 import menu from './menu';
 import contact from './contact';
+import home from './home';
+// import stylesheet
+import './style.css';
 // set up event listeners to call the appropriate js function to switch tabs
 const buildPage = (() => {
   const content = document.getElementById('content');
@@ -21,12 +24,17 @@ const buildPage = (() => {
     subtext.setAttribute('id', 'subtext');
     subtext.textContent = 'American Contemporary Dining';
     btnsContainer.setAttribute('class', 'btns-container');
-    aboutBtn.setAttribute('class', 'button');
+    aboutBtn.setAttribute('class', 'menu-button');
     aboutBtn.textContent = 'About';
-    menuBtn.setAttribute('class', 'button');
+    menuBtn.setAttribute('class', 'menu-button');
     menuBtn.textContent = 'Menu';
-    contactBtn.setAttribute('class', 'button');
+    contactBtn.setAttribute('class', 'menu-button');
     contactBtn.textContent = 'Contact';
+  }
+
+  function buildMain() {
+    const main = content.appendChild(document.createElement('div'));
+    main.setAttribute('class', 'main-container');
   }
 
   function buildFooter() {
@@ -45,6 +53,8 @@ const buildPage = (() => {
   }
 
   buildHeader();
+  buildMain();
   buildFooter();
+  home();
 
 })();
