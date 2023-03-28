@@ -9,6 +9,8 @@ import './style.css';
 const buildPage = (() => {
   const content = document.getElementById('content');
 
+  // set up event listeners
+
   function buildHeader() {
     // create header structure
     const header = content.appendChild(document.createElement('div'));
@@ -37,6 +39,13 @@ const buildPage = (() => {
     main.setAttribute('class', 'main-container');
   }
 
+  function clearMain() {
+    const main = document.querySelector('.main');
+    while (main.firstChild) {
+      main.removeChild(main.firstChild);
+    }
+  }
+
   function buildFooter() {
     // create footer structure
     const footer = content.appendChild(document.createElement('div'));
@@ -46,15 +55,27 @@ const buildPage = (() => {
     footerText.textContent = 'Designed by C. Paiement, 2023';
   }
 
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
+  function navButtons() {
+    const buttons = document.querySelectorAll('.menu-button');
+    buttons.forEach(button => button.addEventListener('click', setPage));
   }
 
-  buildHeader();
-  buildMain();
-  buildFooter();
-  home();
+  function setPage(event) {
+    // clear main div
+    clearMain();
+    const button = event.target.innerHTML;
+    // clear button styling
 
+    // set button styling
+  }
+
+  function initialize() {
+    buildHeader();
+    buildMain();
+    buildFooter();
+    about();
+    navButtons();
+  }
+
+  initialize();
 })();
