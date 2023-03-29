@@ -4,11 +4,6 @@ function contact() {
   const contactContainer = mainContainer.appendChild(document.createElement('div'));
   contactContainer.className = 'contact-container';
 
-  const img = contactContainer.appendChild(document.createElement('img'));
-  img.className = 'map';
-  img.src = './images/map.png';
-  img.alt = 'Las Vegas Map';
-
   const contactFields = contactContainer.appendChild(document.createElement('div'));
   contactFields.className = 'contact-fields';
 
@@ -21,10 +16,15 @@ function contact() {
   ];
 
   for (let i = 0; i < contactText.length; i += 1) {
-    const p = contactContainer.appendChild(document.createElement('p'));
+    const p = contactFields.appendChild(document.createElement('p'));
     p.className = 'contact-text';
     p.textContent = contactText[i];
   }
+
+  const img = contactContainer.appendChild(document.createElement('img'));
+  img.className = 'map';
+  img.src = './images/map.png';
+  img.alt = 'Las Vegas Map';
 }
 
 export default contact;
